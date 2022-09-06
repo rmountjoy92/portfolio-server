@@ -27,17 +27,10 @@ app = FastAPI(
     title="Ross Mountjoy's Portfolio Api",
 )
 
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "https://mountjoy.tech"
-    "https://api.mountjoy.tech"
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
