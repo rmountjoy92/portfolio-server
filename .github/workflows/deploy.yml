@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Bump version
+        run: |
+          git config --global user.email "github+actions@gmail.com"
+          git config --global user.name "Actions"
+          git fetch --tags
+          wget -O - https://raw.githubusercontent.com/treeder/bump/master/gitbump.sh | bash
+          echo "VERSION=$(git tag --sort=-v:refname --list "v[0-9]*" | head -n 1 | cut -c 2-)" >> version.txt
+      - name: docker login
+        env:
+          DOCKER_USER: ${{secrets.DOCKER_USER}} 
+          DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+        run: |
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+      - name: Build Docker image
+        run: docker build . --file Dockerfile --tag rmountjoy/portfolio-server:latest
+      - name: Push to Docker Hub
+        run: docker push rmountjoy/portfolio-server
