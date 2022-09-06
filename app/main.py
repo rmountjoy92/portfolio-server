@@ -2,7 +2,7 @@ from typing import List
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from schemas import (
+from .schemas import (
     AllDataModel,
     InfoModel,
     SkillModel,
@@ -12,7 +12,7 @@ from schemas import (
     HobbyModel,
     ReferenceModel,
 )
-from resume import (
+from .resume import (
     all_data,
     info,
     skills,
