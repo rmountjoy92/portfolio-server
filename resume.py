@@ -175,6 +175,7 @@ projects = [
             "https://ik.imagekit.io/mtn/portfolio-website/homeprep-3_WIXlSGjWJ.png",
             "https://ik.imagekit.io/mtn/portfolio-website/homeprep-4_kYaBPkzcy.png",
             "https://ik.imagekit.io/mtn/portfolio-website/homeprep-5_nx7TFnrcz.png",
+            "https://ik.imagekit.io/mtn/portfolio-website/homeprep-6_Tg5RvvGjs.png",
         ],
     },
     {
