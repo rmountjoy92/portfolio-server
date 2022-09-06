@@ -1,6 +1,6 @@
 from typing import List
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+from starlette.middleware.cors import CORSMiddleware
 
 from .schemas import (
     AllDataModel,
