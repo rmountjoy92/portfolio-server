@@ -1,10 +1,11 @@
 info = {
     "name": "Ross Mountjoy",
-    "title": "Web Developer, 5+ year experience",
+    "title": "Web Developer, 5+ years experience",
     "email": "guava_ska_0p@icloud.com",
     "location": "Asheville, NC",
     "github_profile": "https://github.com/rmountjoy92",
     "headshot": "https://ik.imagekit.io/mtn/portfolio-website/ross_f0F8Gkv0Q.jpg",
+    "cover": 'My name is Ross Mountjoy, I am a web developer with 5+ years of experience development modern web applications. I have created popular open source applications and created a web platform for a real estate renovation company that currently earns $3.5m a year in revenue. My favorite technologies are Python and Vue.js, though I pick up new languages/frameworks easily. I am an excellent problem solver and master of searching Google/documentation. I look forward to being considered to join your team!'
 }
 
 

@@ -10,6 +10,7 @@ class InfoModel(BaseModel):
     location: str
     github_profile: str
     headshot: str
+    cover: str
 
 
 class SkillType(str, Enum):
