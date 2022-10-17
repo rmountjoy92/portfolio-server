@@ -11,6 +11,8 @@ from .schemas import (
     ProjectModel,
     HobbyModel,
     ReferenceModel,
+    DebugInput,
+    DebugOutput
 )
 from .resume import (
     all_data,
@@ -125,3 +127,17 @@ async def get_all():
     Get my whole resume as a single JSON object
     """
     return all_data
+
+
+@app.post(
+    "/debug",
+    tags=["Testing"],
+    name="Debug",
+    response_model=DebugOutput
+)
+async def debug(debug_input: DebugInput):
+    """
+    Print and return the data posted
+    """
+    print(debug_input)
+    return f"{debug_input}"

@@ -67,3 +67,13 @@ class AllDataModel(BaseModel):
     projects: List[ProjectModel]
     hobbies: List[HobbyModel]
     references: List[ReferenceModel]
+
+
+class DebugInput(BaseModel):
+    first_name: str
+    last_name: str
+    ssn: str
+
+
+class DebugOutput(BaseModel):
+    resp: str
