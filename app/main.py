@@ -1,4 +1,4 @@
-from typing import List
+from typing import Any, Dict, AnyStr, List, Union
 from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 
@@ -129,13 +129,17 @@ async def get_all():
     return all_data
 
 
+JSONObject = Dict[AnyStr, Any]
+JSONArray = List[Any]
+JSONStructure = Union[JSONArray, JSONObject]
+
+
 @app.post(
     "/debug",
     tags=["Testing"],
     name="Debug",
-    response_model=DebugOutput
 )
-async def debug(debug_input: DebugInput):
+async def debug(debug_input: JSONStructure = None):
     """
     Print and return the data posted
     """
