@@ -144,4 +144,4 @@ async def debug(debug_input: JSONStructure = None):
     Print and return the data posted
     """
     print(debug_input)
-    return {"resp": f"{debug_input}"}
+    return {"resp": debug_input}
